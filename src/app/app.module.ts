@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { environment } from 'src/environments/environment';
-// import { AngularFireModule } from '@angular/fire/compat';
-// import { AngularFirestoreModule,  FirestoreSettingsToken } from '@angular/fire/compat/firestore';
-// import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { FlashMessagesModule } from 'angular2-flash-messages';
-// import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule,  SETTINGS } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,11 +34,10 @@ import { PiePaginaComponent } from './componentes/pie-pagina/pie-pagina.componen
   imports: [
     BrowserModule,
     AppRoutingModule,
-    // AngularFireModule.initializeApp(environment.firestore, 'control-clientes'),
-    // AngularFirestoreModule,
-    // AngularFireAuthModule,
-    // FormsModule,
-    FlashMessagesModule.forRoot()
+    AngularFireModule.initializeApp(environment.firestore, 'control-clientes'),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
